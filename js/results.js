@@ -197,158 +197,182 @@ renderCongratulations() {
         }
     }
 
-    getActionPlan(layerId) {
+getActionPlan(layerId) {
         const actionPlans = {
             1: {
                 context: '<p>Technical credibility is the foundation of everything. Without it, students won\'t trust your instruction. Movement quality must be earned through deliberate practice, not just accumulated mat time.</p>',
                 steps: [
-                    '<strong>Film yourself weekly</strong> - Record solo training and analyze structure, timing, and tactical principles across all weapon categories (single stick, double stick, knife, espada y daga, panuntukan, dumog)',
-                    '<strong>Practice slow-work to refine mechanics</strong> - Isolate one variable per session (structure, timing, or pressure)',
-                    '<strong>Train regularly with your mentor</strong> - Schedule consistent training sessions (not just teaching). Student instructors and advanced practitioners need ongoing correction and refinement',
-                    '<strong>Go back to fundamentals when needed</strong> - If strikes lack power, return to basic mechanics, conditioning drills, and tire training',
-                    '<strong>Study biomechanics and kinetics</strong> - Understand how power transfers from feet → hips → shoulders → weapon across all ranges (long, medium, close, grappling)',
-                    '<strong>Cross-check movement against tactical principles</strong> - Ask "does this follow sound combat logic?" for every technique across all weapon platforms',
-                    '<strong>Increase deliberate practice reps</strong> - Quality over quantity; train with intention, not just repetition'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Record solo and partner drills weekly</strong> - Review mechanics, timing, and structure across weapon platforms',
+                    '<strong>Focus on one variable at a time</strong> - Isolate footwork, weapon alignment, or striking mechanics per session',
+                    '<strong>Practice slow-work to refine mechanics</strong> - Controlled drills reinforce structure and precision',
+                    '<strong>Train regularly with your mentor</strong> - Get corrections on movement quality and tactical principles',
+                    '<h4>Long-Term (6+ months):</h4>',
+                    '<strong>Apply foundational principles across multiple weapons and ranges</strong> - Single stick → double stick → knife → espada y daga → empty hand',
+                    '<strong>Integrate advanced drills, sparring, and flow exercises safely</strong> - Progress from controlled to dynamic application',
+                    '<strong>Refine movement efficiency and tactical logic continuously</strong> - Study biomechanics, kinetics, and combat principles'
                 ],
                 resources: [
-                    'Study footwork fundamentals and kinetic chain principles',
-                    'Analyze combat biomechanics and power generation',
-                    'Cross-train: observe how other combat sports generate and transfer power',
-                    'Review recordings of senior practitioners and compare movement quality across weapon categories'
+                    'Film yourself weekly and keep a training journal',
+                    'Study biomechanics and kinetic chain principles',
+                    'Cross-train: observe how other combat sports generate power',
+                    'Review recordings of senior practitioners across weapon categories'
                 ],
-                timeline: '3-6 months to see measurable improvement in structure and timing'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish deliberate practice habits<br><strong>Long-term:</strong> 6+ months to see measurable improvement across all weapon platforms'
             },
             2: {
                 context: '<p>Teaching is a separate skill from doing. You can execute perfectly but fail to transmit knowledge if you can\'t diagnose errors, communicate clearly, teach principles (not just techniques), or create psychologically safe learning environments.</p>',
                 steps: [
-                    '<strong>Teach WHY, not just HOW</strong> - Help students understand tactical principles, geometry, and biomechanics behind techniques',
-                    '<strong>Use the explain → demo → drill → correct → refine cycle</strong> - Structure every lesson with this progression',
-                    '<strong>Keep corrections to one sentence</strong> - "Elbow stays inside your centerline" instead of long explanations',
-                    '<strong>Practice 5-minute micro-lessons</strong> - Record yourself teaching a single drill and review for clarity',
-                    '<strong>Document teaching case notes</strong> - What error did you observe? What correction did you apply? Did it work?',
-                    '<strong>Create psychologically safe environments</strong> - Students should feel comfortable making mistakes and asking questions without fear',
-                    '<strong>Train with your mentor on teaching methodology</strong> - Get feedback on how you explain, demonstrate, and correct students'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Teach single concepts in short lessons</strong> - Focus on clarity and principle explanation (WHY, not just HOW)',
+                    '<strong>Give concise, actionable corrections</strong> - Based on structure and timing (e.g., "elbow inside centerline" vs. "good job")',
+                    '<strong>Document teaching case notes</strong> - What error? What correction? Did it work? What\'s next?',
+                    '<strong>Use the explain → demo → drill → correct → refine cycle</strong> - Structure every lesson consistently',
+                    '<h4>Long-Term (6+ months):</h4>',
+                    '<strong>Develop multiple ways to explain concepts</strong> - Visual (show), kinesthetic (feel), analytical (explain why)',
+                    '<strong>Create psychologically safe environments</strong> - Students experiment and fail safely without fear',
+                    '<strong>Mentor junior instructors in teaching principles</strong> - Help others develop reflective practice',
+                    '<strong>Adapt lessons to different learning styles</strong> - Some need biomechanics, others need to feel it'
                 ],
                 resources: [
                     'Keep a teaching journal with case notes',
-                    'Observe skilled instructors and take notes on their teaching methods',
-                    'Study pedagogy: "The Inner Game of Tennis" by Timothy Gallwey',
-                    'Practice giving corrections during sparring or flow drills'
+                    'Record 5-minute micro-lessons and review for clarity',
+                    'Observe skilled instructors and take notes',
+                    'Study pedagogy: "The Inner Game of Tennis" by Timothy Gallwey'
                 ],
-                timeline: '2-4 months to see improvement in student comprehension and retention'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish teaching habits and case documentation<br><strong>Long-term:</strong> 6+ months to adapt to diverse learners and mentor others'
             },
             3: {
-                context: '<p>Students need instructors who are steady, humble, and focused on their growth. Emotional maturity creates psychological safety and trust. Reject fear-based, pain-based, or "break them down to build them up" mentalities - they\'re outdated and harmful.</p>',
+                context: '<p>Students need instructors who are steady, humble, and focused on their growth. Emotional maturity creates psychological safety and trust. Reject fear-based, pain-based, or "break them down to build them up" mentalities.</p>',
                 steps: [
-                    '<strong>Reject fear-based and pain-based training methods</strong> - Use science-backed conditioning and safe training protocols',
-                    '<strong>Write "What went well / What needs work" after each class</strong> - Build the habit of reflective practice',
-                    '<strong>Accept feedback without defensiveness</strong> - When corrected, say "thank you" and apply it immediately',
-                    '<strong>Practice emotional regulation</strong> - Notice when you feel reactive or defensive, and pause before responding',
-                    '<strong>Admit mistakes openly</strong> - Model humility by acknowledging when you\'re wrong or don\'t know something',
-                    '<strong>Prioritize student growth over ego</strong> - Ask yourself: "Is this about helping them or proving myself?"',
-                    '<strong>Seek mentorship on professional conduct</strong> - Ask your mentor or senior practitioners how to handle difficult situations with grace'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Reflect after each session</strong> - Write "What went well / What needs improvement"',
+                    '<strong>Accept feedback without defensiveness</strong> - Say "thank you" and apply corrections immediately',
+                    '<strong>Practice emotional regulation</strong> - Notice when you feel reactive; pause before responding',
+                    '<strong>Reject fear-based training methods</strong> - Use science-backed conditioning and safe protocols',
+                    '<h4>Long-Term (Ongoing):</h4>',
+                    '<strong>Model humility and openness</strong> - Acknowledge mistakes as learning opportunities',
+                    '<strong>Make science-based, safe training decisions</strong> - Stay current on conditioning and injury prevention',
+                    '<strong>Deepen capacity for patience, foresight, and judgment</strong> - Maturity is a lifelong practice',
+                    '<strong>Seek mentorship on professional conduct</strong> - Learn how to handle difficult situations with grace'
                 ],
                 resources: [
-                    'Study modern sports science and safe conditioning practices',
-                    'Consider working with a therapist, coach, or mentor',
-                    'Practice mindfulness or meditation to improve self-awareness',
+                    'Keep a reflective practice journal',
+                    'Study modern sports science and conditioning',
+                    'Consider working with a therapist or coach',
                     'Read: "Ego is the Enemy" by Ryan Holiday'
                 ],
-                timeline: 'Ongoing - maturity is a lifelong practice that deepens with experience'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish reflective habits<br><strong>Long-term:</strong> Ongoing - maturity deepens with experience'
             },
             4: {
-                context: '<p>Retention problems often stem from misalignment. When students don\'t know what they\'re signing up for, they leave confused. FMA offers more than techniques - it offers self-defense, tactical thinking, cultural connection, martial art forms and concepts, and physical development.</p>',
+                context: '<p>Retention problems often stem from misalignment. When students don\'t know what they\'re signing up for, they leave confused. FMA offers more than techniques - self-defense, tactical thinking, cultural connection, martial art forms and concepts.</p>',
                 steps: [
-                    '<strong>Articulate what FMA offers beyond techniques</strong> - Self-defense, tactical thinking, cultural connection, physical development, martial art mastery',
-                    '<strong>Write your training philosophy</strong> - Emphasize respect, science, community, and principle-based learning (not fear or dominance)',
-                    '<strong>Study Philippine history and culture</strong> - Understand the cultural context that shaped FMA. Read about pre-colonial Philippines, resistance movements, and warrior traditions',
-                    '<strong>Learn about common Filipino values</strong> - Study values like <em>kapwa</em> (shared identity), <em>bayanihan</em> (communal unity), <em>utang na loob</em> (reciprocal gratitude), <em>pakikisama</em> (harmonious relations), <em>hiya</em> (sense of propriety). Understand how these values shape community and relationships.',
-                    '<strong>Pre-screen new students</strong> - Have a conversation before they join to assess goal alignment',
-                    '<strong>Communicate values regularly</strong> - Remind students what the program stands for (not just techniques)'
+                    '<h4>Short-Term (1-2 months):</h4>',
+                    '<strong>Write a personal teaching philosophy</strong> - Highlight respect, safety, and principle-based learning',
+                    '<strong>Clarify who your training is for</strong> - And who it\'s NOT for (be specific)',
+                    '<strong>Introduce students to program values</strong> - What does your FMA program stand for beyond techniques?',
+                    '<strong>Pre-screen new students</strong> - Have conversations to assess alignment before they join',
+                    '<h4>Long-Term (Ongoing):</h4>',
+                    '<strong>Deepen understanding of Philippine culture and history</strong> - Study pre-colonial Philippines, resistance movements, warrior traditions',
+                    '<strong>Learn about Filipino values</strong> - <em>Kapwa, bayanihan, utang na loob, pakikisama, hiya</em> - and how they shape community',
+                    '<strong>Continuously refine program mission</strong> - Based on experience and student feedback',
+                    '<strong>Align curriculum with cultural and ethical principles</strong> - Not just technical content'
                 ],
                 resources: [
-                    'Study your lineage\'s history and philosophy',
-                    'Read Philippine history books and cultural studies',
-                    'Attend Filipino cultural events, festivals, or FMA retreats focused on cultural transmission',
-                    'If travel to the Philippines isn\'t possible, attend cultural gatherings or seminars locally'
+                    'Write and post your training philosophy visibly',
+                    'Study Philippine history books and cultural studies',
+                    'Attend Filipino cultural events or FMA retreats',
+                    'Create new student intake questionnaire'
                 ],
-                timeline: '1-2 weeks to clarify mission, ongoing to deepen cultural understanding'
+                timeline: '<strong>Short-term:</strong> 1-2 months to clarify mission<br><strong>Long-term:</strong> Ongoing cultural education and refinement'
             },
             5: {
-                context: '<p>Students need to know where they are and where they\'re going. Teach progressively from foundational principles to advanced application - not just random techniques. Combine clear curriculum with reliable operations and documented safety protocols.</p>',
+                context: '<p>Students need to know where they are and where they\'re going. Teach progressively from foundational principles to advanced application. Combine clear curriculum with reliable operations and documented safety protocols.</p>',
                 steps: [
-                    '<strong>Build principle-based curriculum</strong> - Teach progressively from foundational principles to advanced application (not random techniques)',
-                    '<strong>Document progression across weapon platforms</strong> - Show clear path from stick → knife → sword → empty hand and across tactical ranges',
-                    '<strong>Create documented safety protocols</strong> - Especially for sparring, contact drills, and weapon training',
-                    '<strong>Define milestones that measure principle understanding</strong> - Not just technique memorization',
-                    '<strong>Track attendance and follow up</strong> - Reach out after 2+ missed sessions to check in',
-                    '<strong>Systemize operations</strong> - Consistent class times, clear communication channels, payment systems that work',
-                    '<strong>Work with your mentor to refine curriculum delivery</strong> - Get feedback on pacing, structure, and progression logic'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Document progression from fundamental to advanced principles</strong> - Map 6-12 month journey across weapon platforms',
+                    '<strong>Establish safety protocols for sparring and contact drills</strong> - Written, clear, non-negotiable',
+                    '<strong>Maintain reliable class scheduling</strong> - Consistent times, clear communication, attendance tracking',
+                    '<strong>Create student-facing roadmap</strong> - Show progression visually (beginner → intermediate → advanced)',
+                    '<h4>Long-Term (6+ months):</h4>',
+                    '<strong>Refine curriculum pacing and progression logic</strong> - Through reflection, student feedback, and mentorship',
+                    '<strong>Update operational systems for efficiency</strong> - Automate where possible, streamline communication',
+                    '<strong>Integrate milestone assessments</strong> - Measure principle understanding, not just technique memorization',
+                    '<strong>Work with mentor to refine delivery</strong> - Get feedback on structure and pacing'
                 ],
                 resources: [
                     'FMA curriculum design templates',
                     'Safety protocol checklists for weapon training',
                     'Student progress tracking spreadsheets',
-                    'Class communication protocols (WhatsApp, Discord, email)'
+                    'Communication tools: WhatsApp, Discord, Google Sheets'
                 ],
-                timeline: '3-4 weeks to establish systems, ongoing to maintain and refine'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish systems<br><strong>Long-term:</strong> 6+ months to refine and scale'
             },
             6: {
-                context: '<p>Students stay when they feel they belong. Community is built through intentional stewardship, respect, and social skills - not just training together. Lineage culture is transmitted through modeling, not just talking about it.</p>',
+                context: '<p>Students stay when they feel they belong. Community is built through intentional stewardship, respect, and social skills. Lineage culture is transmitted through modeling, not just talking about it.</p>',
                 steps: [
-                    '<strong>Prioritize social skills and respectful communication</strong> - Create a culture where people support each other, not compete destructively',
-                    '<strong>Support peers during training</strong> - Help newer students, encourage struggling students, celebrate progress',
-                    '<strong>Model humility and respect</strong> - Demonstrate the values you teach in how you conduct yourself',
-                    '<strong>Facilitate community-building</strong> - Post-class gatherings, group challenges, seminars, demonstrations',
-                    '<strong>Teach cultural context in classes</strong> - Share history, philosophy, and Filipino values (not just techniques)',
-                    '<strong>Encourage peer mentorship</strong> - Pair senior students with newer ones',
-                    '<strong>Attend cultural events and retreats</strong> - Participate in Filipino cultural gatherings, FMA events, or lineage-focused seminars'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Model respect, humility, and culturally-informed behavior</strong> - Lead by example during all interactions',
+                    '<strong>Encourage peer support and mentorship</strong> - Pair senior students with newer ones',
+                    '<strong>Facilitate simple community-building practices</strong> - Group drills, small challenges, post-training discussions',
+                    '<strong>Prioritize social skills and respectful communication</strong> - Make it part of training culture',
+                    '<h4>Long-Term (6+ months):</h4>',
+                    '<strong>Develop a strong, values-based community</strong> - Where students genuinely support one another',
+                    '<strong>Integrate cultural lessons and lineage history</strong> - Share Filipino values and FMA heritage regularly',
+                    '<strong>Mentor senior students to lead initiatives</strong> - Empower them to model program culture',
+                    '<strong>Attend cultural events and retreats</strong> - Deepen your own cultural understanding'
                 ],
                 resources: [
-                    'Community-building activity ideas for martial arts schools',
+                    'Community-building activity ideas for martial arts',
                     'Senior student mentorship structure templates',
                     'Lineage history and cultural resources',
-                    'Filipino cultural organizations and FMA community events'
+                    'Filipino cultural organizations and FMA events'
                 ],
-                timeline: '1-3 months to establish culture, ongoing to maintain and deepen'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish culture<br><strong>Long-term:</strong> 6+ months to deepen and sustain'
             },
             7: {
-                context: '<p>Not all students are meant to stay long-term. Understanding their goals (self-defense, fitness, cultural connection, mastery) helps you serve them better. Address misalignment with compassion - not shame, guilt, or intimidation.</p>',
+                context: '<p>Not all students are meant to stay long-term. Understanding their goals (self-defense, fitness, cultural connection, mastery) helps you serve them better. Address misalignment with compassion.</p>',
                 steps: [
-                    '<strong>Have goal-setting conversations</strong> - Ask students what they want (self-defense? fitness? mastery? cultural connection? tactics?)',
-                    '<strong>Assess commitment levels</strong> - Understand who\'s here for life vs. trying it out vs. here for a season',
-                    '<strong>Encourage self-accountability</strong> - Students should track their own progress, set personal goals, and take ownership',
-                    '<strong>Address misalignment with compassion</strong> - If someone isn\'t thriving, have an honest conversation without shame or intimidation',
-                    '<strong>Let go gracefully</strong> - Some students will leave, and that\'s natural. Don\'t guilt or pressure them to stay',
-                    '<strong>Cultivate practitioners who value respect, curiosity, and community</strong> - Not just toughness or aggression',
-                    '<strong>Train with your mentor to understand student psychology</strong> - Learn how to identify readiness, commitment, and alignment'
+                    '<h4>Short-Term (1-2 months):</h4>',
+                    '<strong>Conduct goal-setting conversations with each student</strong> - What do they want from training?',
+                    '<strong>Clarify expectations and commitment levels</strong> - Be honest about what the program requires',
+                    '<strong>Encourage students to track progress</strong> - Help them take ownership of their development',
+                    '<strong>Address misalignment with compassion</strong> - No shame, guilt, or intimidation',
+                    '<h4>Long-Term (Ongoing):</h4>',
+                    '<strong>Cultivate self-directed, responsible practitioners</strong> - Who understand their role in community',
+                    '<strong>Let go gracefully when needed</strong> - Some students will leave; that\'s natural and okay',
+                    '<strong>Promote values-driven participation</strong> - Curiosity, respect, stewardship (not just toughness)',
+                    '<strong>Train with mentor on student psychology</strong> - Learn to identify readiness and alignment'
                 ],
                 resources: [
                     'Student goal-setting worksheet',
-                    'New student intake questions to assess alignment',
+                    'New student intake questions',
                     'Commitment level assessment framework',
-                    'Scripts for compassionate conversations about misalignment'
+                    'Scripts for compassionate misalignment conversations'
                 ],
-                timeline: '1-2 months to implement, ongoing practice and refinement'
+                timeline: '<strong>Short-term:</strong> 1-2 months to implement<br><strong>Long-term:</strong> Ongoing refinement and practice'
             },
             8: {
-                context: '<p>Leadership isn\'t something you claim - it\'s recognized by students when you embody competence, care, and consistency across all layers. Students should respect you because of your consistency and competence - not because of fear or dominance.</p>',
+                context: '<p>Leadership isn\'t something you claim - it\'s recognized by students when you embody competence, care, and consistency across all layers. Students should respect you because of your consistency and competence - not fear or dominance.</p>',
                 steps: [
-                    '<strong>Lead by example in all aspects</strong> - Movement quality, teaching clarity, professionalism, humility, continuous learning',
-                    '<strong>View leadership as stewardship and service</strong> - Not authority, control, or dominance',
-                    '<strong>Continue training with your mentor regularly</strong> - Even advanced instructors need ongoing refinement and guidance',
-                    '<strong>Build respect through consistency and competence</strong> - Not through fear, intimidation, or dominance',
-                    '<strong>Model continuous improvement</strong> - Let students see you training, learning, and refining your craft',
-                    '<strong>Mentor others in reflective practice</strong> - Help newer instructors develop self-awareness and teaching skill',
-                    '<strong>Strengthen all foundational layers</strong> - Leadership emerges when all eight layers are strong'
+                    '<h4>Short-Term (1-3 months):</h4>',
+                    '<strong>Lead by example consistently</strong> - Practice, demonstrate, and explain principles reliably',
+                    '<strong>Serve students through guidance and feedback</strong> - Not authority or dominance',
+                    '<strong>Continue mentorship with senior instructors</strong> - Even advanced practitioners need ongoing guidance',
+                    '<strong>Model humility and continuous learning</strong> - Let students see you train and refine',
+                    '<h4>Long-Term (Ongoing):</h4>',
+                    '<strong>Embody stewardship and competence across all layers</strong> - Technical, teaching, maturity, culture',
+                    '<strong>Mentor others in reflective practice</strong> - Help newer instructors develop self-awareness',
+                    '<strong>Recognize leadership as a product of excellence</strong> - Humility, consistency, and community service',
+                    '<strong>Strengthen all foundational layers continuously</strong> - Leadership emerges when all eight are strong'
                 ],
                 resources: [
-                    'Re-take this assessment in 6 months to track your growth',
+                    'Re-take this assessment every 6 months to track growth',
                     'Study examples of servant leadership in FMA lineages',
-                    'Seek mentorship from senior practitioners',
-                    'Contribute to your lineage or FMA community through teaching, writing, organizing, or cultural preservation'
+                    'Seek ongoing mentorship from senior practitioners',
+                    'Contribute to FMA community through teaching, organizing, or cultural preservation'
                 ],
-                timeline: 'Ongoing - leadership is the outcome of sustained excellence across all layers'
+                timeline: '<strong>Short-term:</strong> 1-3 months to establish servant-leadership habits<br><strong>Long-term:</strong> Ongoing - leadership is the outcome of sustained excellence'
             }
         };
         
@@ -358,4 +382,3 @@ renderCongratulations() {
             timeline: 'Ongoing'
         };
     }
-}
