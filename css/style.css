@@ -424,6 +424,8 @@ h1 {
     color: var(--text-dark);
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: 700;
 }
 
 .priority-section p {
