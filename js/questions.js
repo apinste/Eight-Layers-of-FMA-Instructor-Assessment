@@ -9,7 +9,7 @@ const assessmentData = {
             questions: [
                 {
                     id: "tech-1",
-                    text: "I understand the tactical principles and concepts behind techniques, rather than just mimicking movements.",
+                    text: "I understand the tactical principles and concepts behind techniques, rather than just mimicking movements",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
