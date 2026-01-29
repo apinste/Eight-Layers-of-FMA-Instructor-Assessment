@@ -1,291 +1,148 @@
-// Results Calculation and Display
-
-class ResultsManager {
-    constructor(scores) {
-        this.scores = scores;
-        this.strengths = [];
-        this.development = [];
-        this.categorizeScores();
-    }
-
-    categorizeScores() {
-        Object.entries(this.scores).forEach(([layerId, data]) => {
-            if (data.score >= 4.0) {
-                this.strengths.push({ layerId, ...data });
-            } else if (data.score < 4.0) {
-                this.development.push({ layerId, ...data });
-            }
-        });
-        
-        // Sort development areas by priority (lowest score first)
-        this.development.sort((a, b) => a.score - b.score);
-    }
-
-    displayResults() {
-        this.renderChart();
-        this.renderStrengths();
-        this.renderDevelopmentAreas();
-        this.renderActionSteps();
-    }
-
-    renderChart() {
-        const ctx = document.getElementById('results-chart').getContext('2d');
-        
-        const labels = Object.values(this.scores).map(s => s.name);
-        const data = Object.values(this.scores).map(s => s.score);
-        
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Your Score',
-                    data: data,
-                    backgroundColor: 'rgba(139, 0, 0, 0.2)',
-                    borderColor: 'rgba(139, 0, 0, 1)',
-                    borderWidth: 2,
-                    pointBackgroundColor: 'rgba(139, 0, 0, 1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(139, 0, 0, 1)'
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        beginAtZero: true,
-                        max: 5,
-                        ticks: {
-                            stepSize: 1
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
-    }
-
-    renderStrengths() {
-        const container = document.getElementById('strengths-list');
-        container.innerHTML = '';
-        
-        if (this.strengths.length === 0) {
-            container.innerHTML = '<p>Continue building all foundational layers. Every area shows opportunity for growth.</p>';
-            return;
-        }
-        
-        this.strengths.forEach(strength => {
-            const div = document.createElement('div');
-            div.className = 'layer-result strength';
-            div.innerHTML = `
-                <h3>Layer ${strength.layerId}: ${strength.name}</h3>
-                <p class="layer-score">Score: ${strength.score.toFixed(1)}/5.0</p>
-                <p>${strength.description}</p>
-            `;
-            container.appendChild(div);
-        });
-    }
-
-    renderDevelopmentAreas() {
-        const container = document.getElementById('development-list');
-        container.innerHTML = '';
-        
-        if (this.development.length === 0) {
-            document.getElementById('development-section').style.display = 'none';
-            return;
-        }
-        
-        this.development.forEach((area, index) => {
-            const div = document.createElement('div');
-            div.className = 'layer-result development';
-            
-            let priority = '';
-            if (index === 0) priority = ' - <strong>Priority 1</strong>';
-            else if (index === 1) priority = ' - <strong>Priority 2</strong>';
-            else if (index === 2) priority = ' - <strong>Priority 3</strong>';
-            
-            div.innerHTML = `
-                <h3>Layer ${area.layerId}: ${area.name}${priority}</h3>
-                <p class="layer-score">Score: ${area.score.toFixed(1)}/5.0</p>
-                <p>${area.description}</p>
-            `;
-            container.appendChild(div);
-        });
-    }
-
-    renderActionSteps() {
-        const container = document.getElementById('action-steps-container');
-        container.innerHTML = '';
-        
-        // Show action steps for top 3 development priorities
-        const priorities = this.development.slice(0, 3);
-        
-        priorities.forEach((area, index) => {
-            const actionPlan = this.getActionPlan(area.layerId);
-            
-            const section = document.createElement('div');
-            section.className = 'priority-section';
-            section.innerHTML = `
-                <h3>Priority ${index + 1}: ${area.name} (${area.score.toFixed(1)}/5.0)</h3>
-                ${actionPlan.context}
-                <h4>Action Steps:</h4>
-                <ol>
-                    ${actionPlan.steps.map(step => `<li>${step}</li>`).join('')}
-                </ol>
-                ${actionPlan.resources ? `
-                    <h4>Resources:</h4>
-                    <ul>
-                        ${actionPlan.resources.map(resource => `<li>${resource}</li>`).join('')}
-                    </ul>
-                ` : ''}
-                <p class="timeline"><strong>Expected Timeline:</strong> ${actionPlan.timeline}</p>
-            `;
-            container.appendChild(section);
-        });
-        
-        if (priorities.length === 0) {
-            container.innerHTML = '<p>Great work! Focus on maintaining your strengths and continuing to refine all areas.</p>';
-        }
-    }
-
-    getActionPlan(layerId) {
+getActionPlan(layerId) {
         const actionPlans = {
             1: {
-                context: '<p>Technical credibility is the foundation of everything else. Without it, students won\'t trust your instruction.</p>',
+                context: '<p>Technical credibility is the foundation of everything. Without it, students won\'t trust your instruction. Movement quality must be earned through deliberate practice, not just accumulated mat time.</p>',
                 steps: [
-                    '<strong>Schedule dedicated personal training time</strong> (3-5 hours/week) separate from teaching',
-                    '<strong>Video yourself demonstrating core techniques</strong> and review for errors',
-                    '<strong>Seek monthly feedback</strong> from a senior instructor or training partner',
-                    '<strong>Study biomechanics/kinesiology</strong> relevant to FMA movements',
-                    '<strong>Attend seminars or workshops</strong> to expose gaps in your technical knowledge'
+                    '<strong>Film yourself weekly</strong> - Record solo training and analyze structure, timing, and blade logic alignment',
+                    '<strong>Practice slow-work to refine mechanics</strong> - Isolate one variable per session (structure, timing, or pressure)',
+                    '<strong>Cross-check movement against blade logic principles</strong> - Ask "does this follow closing-the-gap logic?" for every technique',
+                    '<strong>Seek monthly corrections from senior practitioners</strong> - Identify your own errors before your instructor does',
+                    '<strong>Study biomechanics and kinetic chain</strong> - Understand how power transfers from feet → hips → shoulders → weapon',
+                    '<strong>Increase deliberate practice reps</strong> - Quality over quantity; train with intention, not just repetition'
                 ],
                 resources: [
-                    'Record and review your solo training sessions',
-                    'Find a senior practitioner for monthly check-ins',
-                    'Study resources on human movement and body mechanics'
+                    'Study blade logic and footwork fundamentals',
+                    'Analyze boxing science and combat biomechanics',
+                    'Cross-train: observe how other combat sports generate power',
+                    'Review recordings of senior practitioners and compare movement quality'
                 ],
-                timeline: '3-6 months to see measurable improvement'
+                timeline: '3-6 months to see measurable improvement in structure and timing'
             },
             2: {
-                context: '<p>You may have the skill, but can you transmit it effectively? Teaching is a separate competency that must be developed deliberately.</p>',
+                context: '<p>Teaching is a separate skill from doing. You can execute perfectly but fail to transmit knowledge if you can\'t diagnose errors, communicate clearly, or adapt to different learners.</p>',
                 steps: [
-                    '<strong>Practice explaining the same concept three different ways</strong> (visual, kinesthetic, analytical)',
-                    '<strong>Give specific feedback</strong> - replace "good" with "your elbow angle improved from 45° to 30°"',
-                    '<strong>Diagnose root causes</strong> - when students struggle, identify if it\'s physical, mental, or conceptual',
-                    '<strong>Study pedagogy</strong> - read books or take courses on teaching and learning theory',
-                    '<strong>Watch yourself teach</strong> - record classes and analyze your delivery'
+                    '<strong>Use the explain → demo → drill → correct → refine cycle</strong> - Structure every lesson with this progression',
+                    '<strong>Keep corrections to one sentence</strong> - "Elbow stays inside your centerline" instead of long explanations',
+                    '<strong>Practice 5-minute micro-lessons</strong> - Record yourself teaching a single drill and review for clarity',
+                    '<strong>Document teaching case notes</strong> - What error did you observe? What correction did you apply? Did it work?',
+                    '<strong>Develop multiple ways to explain the same concept</strong> - Visual (show), kinesthetic (feel), analytical (explain why)',
+                    '<strong>Teach to different learning styles</strong> - Some students need biomechanical explanations, others need to feel it in their body'
                 ],
                 resources: [
-                    'Read: "The Inner Game of Tennis" by Timothy Gallwey',
-                    'Read: "How Learning Works" by Susan Ambrose',
-                    'Observe skilled teachers in other disciplines'
+                    'Keep a teaching journal with case notes',
+                    'Observe skilled instructors and take notes on their teaching methods',
+                    'Study pedagogy: "The Inner Game of Tennis" by Timothy Gallwey',
+                    'Practice giving corrections during sparring or flow drills'
                 ],
-                timeline: '2-4 months to see improvement in student comprehension'
+                timeline: '2-4 months to see improvement in student comprehension and retention'
             },
             3: {
-                context: '<p>Students respond to instructors who are steady, humble, and focused on their growth. Emotional maturity creates safety and trust.</p>',
+                context: '<p>Students need instructors who are steady, humble, and focused on their growth. Emotional maturity creates psychological safety and trust. Without it, technical skill and teaching ability are undermined.</p>',
                 steps: [
-                    '<strong>Practice emotional regulation</strong> - notice when you feel defensive or reactive, and pause',
-                    '<strong>Admit mistakes openly</strong> - model humility by acknowledging when you\'re wrong',
-                    '<strong>Prioritize student growth over ego</strong> - ask yourself "is this about helping them or proving myself?"',
-                    '<strong>Seek personal development</strong> - therapy, coaching, or spiritual practice',
-                    '<strong>Get feedback on your behavior</strong> - ask trusted students or peers how you show up'
+                    '<strong>Write "What went well / What needs work" after each class</strong> - Build the habit of reflective practice',
+                    '<strong>Accept feedback without defensiveness</strong> - When corrected, say "thank you" and apply it immediately',
+                    '<strong>Practice emotional regulation</strong> - Notice when you feel reactive or defensive, and pause before responding',
+                    '<strong>Admit mistakes openly</strong> - Model humility by acknowledging when you\'re wrong or don\'t know something',
+                    '<strong>Prioritize student growth over ego</strong> - Ask yourself: "Is this about helping them or proving myself?"',
+                    '<strong>Strengthen emotional intelligence</strong> - Learn to read student frustration, fear, or confusion and respond appropriately'
                 ],
                 resources: [
-                    'Consider working with a therapist or coach',
-                    'Practice mindfulness or meditation',
-                    'Read: "Ego is the Enemy" by Ryan Holiday'
+                    'Consider working with a therapist, coach, or mentor',
+                    'Practice mindfulness or meditation to improve self-awareness',
+                    'Read: "Ego is the Enemy" by Ryan Holiday',
+                    'Seek feedback from trusted students or peers: "How do I show up as an instructor?"'
                 ],
-                timeline: 'Ongoing - maturity is a lifelong practice'
+                timeline: 'Ongoing - maturity is a lifelong practice that deepens with experience'
             },
             4: {
-                context: '<p>Retention problems often stem from misalignment. When students don\'t know what they\'re signing up for, they leave confused.</p>',
+                context: '<p>Retention problems often stem from misalignment. When students don\'t know what they\'re signing up for, they leave confused. Cultural and lineage alignment also matters - students need to understand what your program represents.</p>',
                 steps: [
-                    '<strong>Write your training philosophy</strong> - who is this for? What do you value? What won\'t you compromise?',
-                    '<strong>Create a clear mission statement</strong> - make it visible on your website and in your space',
-                    '<strong>Pre-screen new students</strong> - have a conversation before they join to assess alignment',
-                    '<strong>Communicate values regularly</strong> - remind students what the program stands for',
-                    '<strong>Be willing to say no</strong> - not every student is a good fit, and that\'s okay'
+                    '<strong>Write your training philosophy</strong> - Who is this for? What do you value? What won\'t you compromise on?',
+                    '<strong>Define lineage and cultural alignment</strong> - Make it clear what tradition you represent and why it matters',
+                    '<strong>Pre-screen new students</strong> - Have a conversation before they join to assess goal alignment',
+                    '<strong>Communicate values regularly</strong> - Remind students what the program stands for (not just techniques)',
+                    '<strong>Learn correct terminology and cultural context</strong> - Understand the history, philosophy, and ethos of your lineage',
+                    '<strong>Be willing to say no</strong> - Not every student is a good fit, and that\'s okay'
                 ],
                 resources: [
-                    'Examples of clear training philosophies from other schools',
-                    'New student intake questionnaire template',
-                    'Mission statement worksheet'
+                    'Study your lineage\'s history and philosophy',
+                    'Create a new student intake questionnaire',
+                    'Examples of clear training philosophies from FMA schools',
+                    'Attend cultural or lineage-focused seminars'
                 ],
-                timeline: '1-2 weeks to clarify, ongoing to implement'
+                timeline: '1-2 weeks to clarify, ongoing to implement and refine'
             },
             5: {
-                context: '<p>Students need to know where they are and where they\'re going. Combine clear curriculum with reliable operations.</p>',
+                context: '<p>Students need to know where they are and where they\'re going. Clear curriculum structure combined with reliable operations creates trust and reduces confusion. Chaos in scheduling or logistics erodes credibility.</p>',
                 steps: [
-                    '<strong>Document your curriculum</strong> - map out 6-12 month progression with milestones',
-                    '<strong>Create a student-facing roadmap</strong> - visual guide showing progression paths',
-                    '<strong>Systemize operations</strong> - set up consistent class times, communication channels, payment systems',
-                    '<strong>Track attendance</strong> - use a simple spreadsheet or app',
-                    '<strong>Follow up with absent students</strong> - reach out after 2+ missed sessions',
-                    '<strong>Review curriculum quarterly</strong> - assess what\'s working and adjust'
+                    '<strong>Document your curriculum</strong> - Map out 6-12 month progression with clear milestones (beginner → intermediate → advanced)',
+                    '<strong>Create a student-facing roadmap</strong> - Visual guide showing what students will learn and when',
+                    '<strong>Track attendance and follow up</strong> - Reach out after 2+ missed sessions to check in',
+                    '<strong>Build onboarding processes</strong> - How do new students learn your class structure, expectations, and culture?',
+                    '<strong>Review curriculum quarterly</strong> - Assess what\'s working, what\'s not, and adjust',
+                    '<strong>Systemize operations</strong> - Consistent class times, clear communication channels, payment systems that work'
                 ],
                 resources: [
-                    'FMA curriculum design template',
-                    'Student progress tracking spreadsheet',
-                    'Class communication protocol template',
-                    'Recommended tools: Google Sheets, WhatsApp/Discord, Stripe'
+                    'FMA curriculum design templates',
+                    'Student progress tracking spreadsheets',
+                    'Class communication protocols (WhatsApp, Discord, email)',
+                    'Recommended tools: Google Sheets for attendance, Stripe for payments'
                 ],
-                timeline: '3-4 weeks to establish, ongoing to maintain'
+                timeline: '3-4 weeks to establish systems, ongoing to maintain and refine'
             },
             6: {
-                context: '<p>Students stay when they feel they belong. Community is built through intentional stewardship, not just training together.</p>',
+                context: '<p>Students stay when they feel they belong. Community is built through intentional stewardship, not just training together. Lineage culture is transmitted through modeling, not just talking about it.</p>',
                 steps: [
-                    '<strong>Create community-building opportunities</strong> - post-class gatherings, special events, group challenges',
-                    '<strong>Encourage peer mentorship</strong> - pair senior students with newer ones',
-                    '<strong>Model the values you teach</strong> - demonstrate humility, respect, service',
-                    '<strong>Facilitate connection</strong> - create a group chat or forum for students',
-                    '<strong>Recognize contributions</strong> - acknowledge when students help each other or the community',
-                    '<strong>Host regular gatherings</strong> - potlucks, seminars, demonstrations'
+                    '<strong>Support peers during training</strong> - Help newer students, encourage struggling students, celebrate progress',
+                    '<strong>Model humility and respect</strong> - Demonstrate the values you teach in how you conduct yourself',
+                    '<strong>Facilitate community-building</strong> - Post-class gatherings, group challenges, seminars, demonstrations',
+                    '<strong>Encourage peer mentorship</strong> - Pair senior students with newer ones',
+                    '<strong>Protect lineage integrity</strong> - Ensure training aligns with the cultural and technical standards of your lineage',
+                    '<strong>Teach cultural context in classes</strong> - Share history, philosophy, and values (not just techniques)'
                 ],
                 resources: [
-                    'Community-building activity ideas',
-                    'Senior student mentorship structure template',
-                    'Event planning checklist'
+                    'Community-building activity ideas for martial arts schools',
+                    'Senior student mentorship structure templates',
+                    'Lineage history and cultural resources',
+                    'Event planning checklists for seminars or gatherings'
                 ],
-                timeline: '1-3 months to establish culture, ongoing to maintain'
+                timeline: '1-3 months to establish culture, ongoing to maintain and deepen'
             },
             7: {
-                context: '<p>Not all students are meant to stay long-term. Understanding their goals and commitment helps you serve them better and know when to let go.</p>',
+                context: '<p>Not all students are meant to stay long-term. Understanding their goals and commitment level helps you serve them better and know when to let go. Self-accountability must be cultivated in students, not imposed.</p>',
                 steps: [
-                    '<strong>Have goal-setting conversations</strong> - ask students what they want from training',
-                    '<strong>Assess commitment levels</strong> - understand who\'s here for life vs. trying it out',
-                    '<strong>Encourage self-accountability</strong> - students should track their own progress and set personal goals',
-                    '<strong>Address misalignment directly</strong> - if someone isn\'t thriving, have an honest conversation',
-                    '<strong>Let go gracefully</strong> - some students will leave, and that\'s natural',
-                    '<strong>Cultivate serious practitioners</strong> - invest most energy in aligned, committed students'
+                    '<strong>Have goal-setting conversations</strong> - Ask students what they want from training (fitness? self-defense? mastery? competition?)',
+                    '<strong>Assess commitment levels</strong> - Understand who\'s here for life vs. trying it out vs. here for a season',
+                    '<strong>Encourage self-accountability</strong> - Students should track their own progress, set personal goals, and take ownership',
+                    '<strong>Address misalignment directly</strong> - If someone isn\'t thriving, have an honest conversation',
+                    '<strong>Let go gracefully</strong> - Some students will leave, and that\'s natural. Wish them well.',
+                    '<strong>Cultivate serious practitioners</strong> - Invest most energy in aligned, committed students who share your values'
                 ],
                 resources: [
                     'Student goal-setting worksheet',
-                    'New student intake questions',
-                    'Commitment level assessment framework'
+                    'New student intake questions to assess alignment',
+                    'Commitment level assessment framework',
+                    'Scripts for difficult conversations about misalignment'
                 ],
-                timeline: '1-2 months to implement, ongoing practice'
+                timeline: '1-2 months to implement, ongoing practice and refinement'
             },
             8: {
-                context: '<p>Leadership isn\'t something you claim - it\'s recognized by students when you embody competence, care, and consistency across all layers.</p>',
+                context: '<p>Leadership isn\'t something you claim - it\'s recognized by students when you embody competence, care, and consistency across all layers. It\'s the outcome of doing the work, not the starting point.</p>',
                 steps: [
-                    '<strong>Lead by example</strong> - model the behavior, values, and commitment you expect',
-                    '<strong>Serve, don\'t command</strong> - view leadership as stewardship, not authority',
-                    '<strong>Stay humble</strong> - acknowledge your ongoing growth and learning',
-                    '<strong>Build trust through consistency</strong> - show up reliably in skill, character, and care',
-                    '<strong>Mentor, don\'t just instruct</strong> - invest in students\' growth beyond technique',
-                    '<strong>Strengthen all other layers</strong> - leadership emerges when the foundations are strong'
+                    '<strong>Lead by example in all aspects</strong> - Movement quality, teaching clarity, professionalism, humility, continuous learning',
+                    '<strong>View leadership as stewardship, not authority</strong> - You\'re a caretaker of lineage, culture, and community',
+                    '<strong>Seek feedback proactively</strong> - Ask trusted students and peers: "How can I serve this community better?"',
+                    '<strong>Model continuous improvement</strong> - Let students see you training, learning, and refining your craft',
+                    '<strong>Mentor others in reflective practice</strong> - Help newer instructors develop self-awareness and teaching skill',
+                    '<strong>Strengthen all foundational layers</strong> - Leadership emerges when technical skill, teaching ability, maturity, program clarity, operations, community stewardship, and student alignment are all strong'
                 ],
                 resources: [
-                    'Re-take this assessment in 6 months to track progress',
-                    'Seek feedback from trusted students and peers',
-                    'Study examples of servant leadership in martial arts'
+                    'Re-take this assessment in 6 months to track your growth',
+                    'Study examples of servant leadership in FMA lineages',
+                    'Seek mentorship from senior practitioners',
+                    'Contribute to your lineage or FMA community through teaching, writing, or organizing'
                 ],
-                timeline: 'Ongoing - leadership is the outcome of sustained excellence'
+                timeline: 'Ongoing - leadership is the outcome of sustained excellence across all layers'
             }
         };
         
@@ -295,4 +152,3 @@ class ResultsManager {
             timeline: 'Ongoing'
         };
     }
-}
