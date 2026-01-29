@@ -122,8 +122,13 @@ class QuizManager {
                 input.checked = true;
             }
             
+            // Auto-advance on selection
             input.addEventListener('change', () => {
                 this.answers[question.id] = i;
+                // Small delay so user sees their selection before advancing
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, 300);
             });
             
             const label = document.createElement('label');
@@ -159,8 +164,13 @@ class QuizManager {
                 input.checked = true;
             }
             
+            // Auto-advance on selection
             input.addEventListener('change', () => {
                 this.answers[question.id] = value;
+                // Small delay so user sees their selection before advancing
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, 300);
             });
             
             const label = document.createElement('label');
@@ -179,9 +189,8 @@ class QuizManager {
         const layer = this.getCurrentLayer();
         const question = this.getCurrentQuestion();
         
-        // Validate answer
+        // Silently stay on current question if no answer (for manual "Next" clicks)
         if (!this.answers[question.id]) {
-            alert('Please answer the current question before continuing.');
             return;
         }
         
