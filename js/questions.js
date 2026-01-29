@@ -9,35 +9,35 @@ const assessmentData = {
             questions: [
                 {
                     id: "tech-1",
-                    text: "I understand the tactical principles and concepts behind techniques (not just mimicking movements or collecting techniques)",
+                    text: "I understand the tactical principles and concepts behind techniques, rather than just mimicking movements.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "tech-2",
-                    text: "I teach principle-based FMA (tactical concepts, geometry, timing) rather than just a collection of techniques",
+                    text: "I teach principle-based FMA (tactical concepts, geometry, timing, etc.) instead of presenting disconnected techniques.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "tech-3",
-                    text: "I can apply fundamental principles across multiple weapon platforms (single/double stick, knife, sword, espada y daga, empty hand)",
+                    text: "I can apply fundamental principles across multiple weapon platforms (stick, knife, sword, espada y daga, empty hand, etc.).",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "tech-4",
-                    text: "I film and analyze my training regularly to identify structural or timing issues",
+                    text: "I record, review, and analyze my training regularly to identify structural, timing, or technical issues.",
                     type: "yesno"
                 },
                 {
                     id: "tech-5",
-                    text: "I train with my mentor or senior practitioner regularly (not just teach)",
+                    text: "I train consistently with my mentor to ensure proper development and guidance.",
                     type: "yesno"
                 },
                 {
                     id: "tech-6",
-                    text: "My movement demonstrates sound biomechanics, kinetic chain principles, and tactical logic",
+                    text: "My movements demonstrate sound biomechanics, tactical logic, and adaptability.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 }
@@ -50,37 +50,37 @@ const assessmentData = {
             questions: [
                 {
                     id: "teach-1",
-                    text: "I can teach students to understand WHY techniques work (principles, geometry, biomechanics) not just HOW to do them",
+                    text: "I teach students to understand why techniques work, not just how to perform them.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "teach-2",
-                    text: "I give specific, actionable corrections based on biomechanics and principles",
+                    text: "I provide specific, actionable corrections grounded in principles, mechanics, and tactical reasoning.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "teach-3",
-                    text: "I can diagnose WHY a student is struggling (structure, timing, fear, misunderstanding, conditioning)",
+                    text: "I can diagnose why a student is struggling (structure, timing, fear, misunderstanding, conditioning, etc.) and adjust accordingly.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "teach-4",
-                    text: "I create a psychologically safe learning environment (students aren't afraid to make mistakes or ask questions)",
+                    text: "I create a safe learning environment - mentally, emotionally, physically, and psychologically.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "teach-5",
-                    text: "I can teach the same concept in multiple ways (visual, kinesthetic, analytical)",
+                    text: "I can present the same concept in multiple ways (visual, kinesthetic, analytical) to suit diverse learning styles.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "teach-6",
-                    text: "I document teaching case notes (what error, what correction, did it work?)",
+                    text: "I document teaching notes, including errors, corrections, learning outcomes, and patterns for future improvement.",
                     type: "yesno"
                 }
             ]
@@ -92,37 +92,37 @@ const assessmentData = {
             questions: [
                 {
                     id: "maturity-1",
-                    text: "I reject fear-based or pain-based training methods (I don't believe in 'breaking students down to build them up')",
+                    text: "I use challenge, controlled discomfort, and realistic pressure intentionally to develop skill and resilience, without relying on fear or pain as the primary teacher.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "maturity-2",
-                    text: "I use science-based conditioning and training methods (not outdated, injury-prone practices)",
+                    text: "I design and implement conditioning and training methods that are evidence-based, safe, and contextually relevant, avoiding outdated or injury-prone practices.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "maturity-3",
-                    text: "I accept feedback and corrections without defensiveness",
+                    text: "I accept feedback and corrections thoughtfully, using them to improve my teaching and practice without defensiveness.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "maturity-4",
-                    text: "I stay calm and composed when students are frustrated or challenge me",
+                    text: "I maintain composure and clarity when students are frustrated, resistant, or challenge my instruction, responding with patience and guidance.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "maturity-5",
-                    text: "I openly admit when I don't know something or have made a mistake",
+                    text: "I acknowledge gaps in my knowledge or mistakes openly, using them as opportunities for growth and modeling humility for students.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "maturity-6",
-                    text: "I write reflective notes after teaching (what went well / what needs work)",
+                    text: "After each teaching session, I reflect on what went well, what could be improved, and how students responded, using notes or journaling to guide my development.",
                     type: "yesno"
                 }
             ]
@@ -134,34 +134,34 @@ const assessmentData = {
             questions: [
                 {
                     id: "identity-1",
-                    text: "I can clearly articulate what FMA offers beyond just techniques (self-defense, tactical thinking, cultural connection, physical development, martial art forms and concepts)",
+                    text: "I can clearly articulate what FMA offers beyond techniques (self-defense, tactical thinking, cultural connection, physical development, martial concepts).",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "identity-2",
-                    text: "I have a written training philosophy that emphasizes respect, science, and community (not fear or dominance)",
+                    text: "I have a written training philosophy emphasizing respect, science, and community rather than fear or dominance.",
                     type: "yesno"
                 },
                 {
                     id: "identity-3",
-                    text: "I have studied Philippine history and understand the cultural context of FMA",
+                    text: "I have studied Philippine history and understand the cultural context of FMA.",
                     type: "yesno"
                 },
                 {
                     id: "identity-4",
-                    text: "I understand Filipino values (kapwa, bayanihan, utang na loob, pakikisama, hiya) and how they shape community",
+                    text: "I understand Filipino values (kapwa, bayanihan, utang na loob, pakikisama, hiya) and how they shape community and training.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "identity-5",
-                    text: "I can clearly state who my training is for (and who it's NOT for)",
+                    text: "I can clearly state who my training is for, and who it is not for.",
                     type: "yesno"
                 },
                 {
                     id: "identity-6",
-                    text: "New students understand what they're signing up for before joining",
+                    text: "New students understand what they are committing to before joining the program.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 }
@@ -174,46 +174,46 @@ const assessmentData = {
             questions: [
                 {
                     id: "curriculum-1",
-                    text: "My curriculum teaches progressively from foundational principles to advanced application (not just random techniques)",
+                    text: "My curriculum progresses from foundational principles to advanced application, avoiding random or disconnected techniques.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "curriculum-2",
-                    text: "Students understand the progression across weapon platforms (stick → knife → sword → empty hand, etc.) and tactical ranges",
+                    text: "Students understand the progression across weapon platforms (stick → knife → sword → empty hand, etc.) and tactical ranges.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "curriculum-3",
-                    text: "I have documented safety protocols for sparring, contact drills, and weapon training",
+                    text: "I have documented safety protocols for sparring, contact drills, and weapon training.",
                     type: "yesno"
                 },
                 {
                     id: "curriculum-4",
-                    text: "I have defined milestones that measure understanding of principles (not just technique memorization)",
+                    text: "I have defined milestones that measure understanding of principles, not just technique memorization.",
                     type: "yesno"
                 },
                 {
                     id: "operations-1",
-                    text: "Classes start and end on time consistently",
+                    text: "Classes start and end consistently on time.",
                     type: "yesno"
                 },
                 {
                     id: "operations-2",
-                    text: "I communicate schedule changes clearly and promptly",
+                    text: "I communicate schedule changes clearly and promptly.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "operations-3",
-                    text: "I have systems in place for attendance tracking, payments, and communication",
+                    text: "I have systems for attendance, payments, and communication that function reliably.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "operations-4",
-                    text: "I track attendance and follow up with students who miss multiple sessions",
+                    text: "I track attendance and follow up with students who miss multiple sessions.",
                     type: "yesno"
                 }
             ]
@@ -225,37 +225,37 @@ const assessmentData = {
             questions: [
                 {
                     id: "community-1",
-                    text: "I prioritize social skills and respectful communication in my training space",
+                    text: "I prioritize social skills and respectful communication in the training space.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "community-2",
-                    text: "I actively support peers and newer students during training (not just focus on advanced students)",
+                    text: "I actively support peers and newer students, not just advanced ones.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "community-3",
-                    text: "I model humility, respect, and the values I teach",
+                    text: "I model humility, respect, and the values I teach.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "community-4",
-                    text: "Students form friendships and support each other (training creates community, not just competitors)",
+                    text: "Students form friendships and support each other, creating a collaborative community rather than just competitors.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "community-5",
-                    text: "I teach cultural context, lineage history, and Filipino values (not just techniques)",
+                    text: "I teach cultural context, lineage history, and Filipino values, not just techniques.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "community-6",
-                    text: "Senior students help mentor and support newer students",
+                    text: "Senior students help mentor and support newer students proactively.",
                     type: "yesno"
                 }
             ]
@@ -267,36 +267,36 @@ const assessmentData = {
             questions: [
                 {
                     id: "alignment-1",
-                    text: "I have goal-setting conversations with students (self-defense, fitness, martial art mastery, cultural connection, tactics)",
+                    text: "I have goal-setting conversations with students about self-defense, fitness, martial mastery, cultural connection, and tactics.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "alignment-2",
-                    text: "I understand each student's commitment level and expectations",
+                    text: "I understand each student’s commitment level and expectations.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "alignment-3",
-                    text: "I encourage students to take ownership of their training (set goals, track progress, ask questions)",
+                    text: "I encourage students to take ownership of their training, set goals, track progress, and ask questions.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "alignment-4",
-                    text: "I address misalignment directly with compassion (not shame or intimidation)",
+                    text: "I address misalignment directly with compassion, not shame or intimidation.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "alignment-5",
-                    text: "I'm comfortable letting students go if they're not a good fit (I don't guilt or pressure them to stay)",
+                    text: "I am comfortable letting students go if they are not a good fit, without guilt or pressure.",
                     type: "yesno"
                 },
                 {
                     id: "alignment-6",
-                    text: "Students who thrive in my program share values of respect, curiosity, and community (not just toughness or aggression)",
+                    text: "Students who thrive in my program share values of respect, curiosity, and community, not just toughness or aggression.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 }
@@ -309,36 +309,36 @@ const assessmentData = {
             questions: [
                 {
                     id: "leadership-1",
-                    text: "Students seek my guidance beyond just technical instruction (they trust my judgment and character)",
+                    text: "Students seek my guidance beyond technical instruction because they trust my judgment and character.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "leadership-2",
-                    text: "Students respect me because of consistency and competence (not because of fear or dominance)",
+                    text: "Students respect me for consistency, competence, and integrity, not fear or dominance.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "leadership-3",
-                    text: "I view leadership as stewardship and service (not authority or control)",
+                    text: "I view leadership as stewardship and service, not authority or control.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "leadership-4",
-                    text: "I continue training with my mentor regularly (even as an advanced practitioner or instructor)",
+                    text: "I continue training with my mentor regularly, even as an advanced practitioner or instructor.",
                     type: "yesno"
                 },
                 {
                     id: "leadership-5",
-                    text: "I model continuous improvement and humility (students see me training, learning, and refining)",
+                    text: "I model continuous improvement and humility; students see me learning and refining my skills.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 },
                 {
                     id: "leadership-6",
-                    text: "Students voluntarily take on responsibilities to support the program (because they feel ownership, not obligation)",
+                    text: "Students voluntarily take on responsibilities to support the program because they feel ownership, not obligation.",
                     type: "scale",
                     scaleLabels: ["Strongly Disagree", "Disagree", "Unsure", "Agree", "Strongly Agree"]
                 }
